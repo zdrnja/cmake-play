@@ -1,5 +1,7 @@
 # cmake-play
 clone this and try cmake for yourself with:
 
-cmake .
-make
+cmake . [Enter]
+make [Enter]
+
+
