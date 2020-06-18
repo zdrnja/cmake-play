@@ -20,7 +20,7 @@ add_executable (
 add_custom_command(
   OUTPUT final.solution
   COMMAND upx changeMyKey -o x86_64.compressed.dynamic.binary
-  COMMENT "Fuck"
+  COMMENT "No Comment"
   VERBATIM
 )
 
