@@ -1,0 +1,12 @@
+First compiled with:
+gcc demo.c aes256.c -o all_switches.elf -Wall -fpie -pie -O3 -fsanitize=address -fno-omit-frame-pointer
+but then cmake cried so I cut sanitize options.
+compressed with
+upx ChangeMyKey.elf ChangeMyKey.temp.binary
+I looked at the hex with:
+xxd ChangeMyKey.temp.binary
+then I run valgrind just for a good measure,
+valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes -v ./ChangeMyKey.temp.binary
+
+I need to include a binary file in other executable at gcc time read:
+https://stackoverflow.com/questions/4158900/embedding-resources-in-executable-using-gcc
